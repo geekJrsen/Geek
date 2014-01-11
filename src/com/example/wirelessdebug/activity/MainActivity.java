@@ -68,7 +68,7 @@ public final class MainActivity extends Activity implements OnClickListener, OnC
 	@Override
 	public void onCommandOutput(int id, String output) {
 		// TODO Auto-generated method stub
-		Log.e("回调了", "YES" + output);
+		Log.e("回调了", "YES " + output);
 		switch (id) {
 		case Constant.CHECK_WIRELESS_DEBUG_STATE_ID:
 			this.checkWirelessStateAction(output);
