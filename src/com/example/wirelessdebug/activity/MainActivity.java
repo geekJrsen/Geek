@@ -26,7 +26,7 @@ public final class MainActivity extends Activity implements OnClickListener, OnC
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		this.initWidget();
-//		this.checkWirelessState();
+		// this.checkWirelessState();
 	}
 
 	private void checkWirelessState() {
@@ -50,11 +50,12 @@ public final class MainActivity extends Activity implements OnClickListener, OnC
 	@Override
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
-//		if (mWirelessStateFlag) {
-//			mMyCommand = new MyCommand(Constant.CLOSE_WIRELESS_DEBUG_ID, Constant.CLOSE_WIRELESS_DEBUG, this);
-//		} else {
-			mMyCommand = new MyCommand(Constant.OPEN_WIRELESS_DEBUG_ID, Constant.OPEN_WIRELESS_DEBUG, this);
-//		}
+		// if (mWirelessStateFlag) {
+		// mMyCommand = new MyCommand(Constant.CLOSE_WIRELESS_DEBUG_ID,
+		// Constant.CLOSE_WIRELESS_DEBUG, this);
+		// } else {
+		mMyCommand = new MyCommand(Constant.OPEN_WIRELESS_DEBUG_ID, Constant.OPEN_WIRELESS_DEBUG, this);
+		// }
 		Utils.runCommand(mMyCommand);
 	}
 
@@ -62,13 +63,13 @@ public final class MainActivity extends Activity implements OnClickListener, OnC
 	public void onCommandCompleted(int arg0, int arg1) {
 		// TODO Auto-generated method stub
 		Log.e("回调了", "结束" + arg1);
-//		checkWirelessStateAction("");
+		// checkWirelessStateAction("");
 	}
 
 	@Override
 	public void onCommandOutput(int id, String output) {
 		// TODO Auto-generated method stub
-		Log.e("回调了", "YES " + output);
+		Log.e("回调了输出", " YES " + output);
 		switch (id) {
 		case Constant.CHECK_WIRELESS_DEBUG_STATE_ID:
 			this.checkWirelessStateAction(output);
